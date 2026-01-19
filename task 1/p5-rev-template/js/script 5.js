@@ -48,8 +48,12 @@ function draw(){
 //mouse hover function
 function mouseHover(){
     if (mouseX > orangeButton.x && mouseX < orangeButton.x+orangeButton.size && mouseY > orangeButton.y && mouseY < orangeButton.y+orangeButton.size) {
-        orangeButton.color.normal === orangeButton.color.hover
+        orangeButton.color.normal = orangeButton.color.hover
         console.log("hover is working")
     }
-   
+       
 }
+
+/*function mouseClicked(){
+    if
+}*/
