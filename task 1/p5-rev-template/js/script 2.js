@@ -10,13 +10,15 @@ function setup() {
     console.log("go")
     createCanvas(500, 500);
     background (100);
-    drawEllipse(12, 12, 12, 12, 12, 12, 12) //always use the parameters in the same order as you created them in ur function parantheses
-    drawEllipse( 50, 50, 20, 20 ,20 ,20 ,20)
-    drawEllipse( 80, 80, 30, 30 ,20 ,20 ,20)
-    }
+   
+    drawSquare(12, 12, 50)
+    drawSquare(70, 70, 80)
+    drawSquare(180, 180, 100)
+}
 
 function draw() {
    
+
 }
 
 function drawEllipse(x,y,w,h,r,g,b){
