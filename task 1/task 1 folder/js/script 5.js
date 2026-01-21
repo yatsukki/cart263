@@ -43,9 +43,9 @@ function draw(){
     displaySquare(redButton.color,redButton.x,redButton.y,redButton.size)
     
     if (checkCollisionWithSquare()){
-        createEllipse();
+        createEllipse(radius)
     }
-    
+   
 
 }
 //&& mouseY > orangeButton.y && mouseY < orangeButton.y+orangeButton.size
@@ -73,7 +73,7 @@ function checkCollisionWithSquare(){
     return mouseX > orangeButton.x && mouseX < orangeButton.x+orangeButton.size && mouseY > orangeButton.y && mouseY < orangeButton.y+orangeButton.size
 }
 
-function createEllipse(){
-    fill("#ffffff")
-    ellipse(width/2, height/2, radius,radius)
+function createEllipse(r){
+    fill(ellipseAlpha)
+    ellipse(width/2, height/2, r,r)
 }
