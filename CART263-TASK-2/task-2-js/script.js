@@ -7,40 +7,48 @@ console.log("we are a go!")
 /*** START PART ONE ACCESS */ 
 /* 1: all paragraph elements */
 /***CODE */
+console.log(document.getElementsByTagName("p"))
 /***OUTPUT: 
  * 
  */
-
 
 /*************************************** */
 /* 2: only the first paragraph element */
 /***CODE */
+console.log(document.getElementsByTagName("p")[0])
 /***OUTPUT: 
  * 
  */
-
 
 /*************************************** */
 /* 3: all elements with the class inner-container */
 /***CODE */
+console.log(document.getElementsByClassName("inner-container"))
 /***OUTPUT: 
  * 
  */
-
 
 /*************************************** */
 /* 4: the last image element inside the element that has the class img-container */
 /***CODE */
+lastImg = document.getElementsByClassName("inner-container").length
+
+console.log(lastImg - 1)
 /***OUTPUT: 
  * 
  */
-
 
 /*************************************** */
 /* 5A: all h2 elements */
 /* 5B: length of the list in 5A */
 /* 5C: the text content of the first element in the list from 5A */
 /***CODE */
+console.log(document.getElementsByTagName("h2"))
+
+last5b = document.getElementsByClassName("5").length
+console.log(last5b)
+
+console.log(document.getElementsByTagName("h2")[0].textContent)
 /***OUTPUT: 
  * 
  */
@@ -48,6 +56,8 @@ console.log("we are a go!")
 
 /*************************************** */
 /* 6: the element with id name parent */
+
+console.log(document.getElementById("parent"))
 /***CODE */
 /***OUTPUT: 
  * 
