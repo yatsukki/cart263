@@ -72,29 +72,38 @@ console.log(document.getElementById("parent"))
 /*************************************** */
 /* 1: Select the first paragraph and replace the text within the paragraph... */
 /***CODE */
+
+document.getElementById("2").innerHTML = "<p> New text in paragraph one: text changed by `your name` on the following date: `today's date`. </p>";
 /*************************************** */
 /* 2: Select all elements in the HTML that have the class name content-container
  and change the background color ... of first and second ...*/
 /***CODE */
+document.getElementsByClassName("content-container")[0].style.background = 'orange';
+document.getElementsByClassName("content-container")[1].style.background = 'purple';
 
 /*************************************** */
 /* 3: Change the src element of the first image element on the page to be ...
 /***CODE */
-
+document.getElementsByClassName("img-image")[0].src="task-2-images/seven.png"
 /*************************************** */
 /* 4: Select the third paragraph element on the page and 
 replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
 /***CODE */
+document.getElementById("4").innerHTML = "<h2> TEST 123 </h2>"
 
 /*************************************** */
 /* 5: Select the fourth paragraph element on the page and 
 add to the existing content an h2 element containing the text `TEST 123`
 /***CODE */
+var paragraph = document.getElementById("5")
+var text = "<h2> TEST 123 </h2>"
 
+paragraph.innerHTML += text
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
 /***CODE */
+
 
 
 /*************************************** */
