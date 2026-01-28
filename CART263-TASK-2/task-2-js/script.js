@@ -1,3 +1,5 @@
+
+
 window.onload = setup;
 
 /** function setup */
@@ -7,103 +9,108 @@ console.log("we are a go!")
 /*** START PART ONE ACCESS */ 
 /* 1: all paragraph elements */
 /***CODE */
-console.log(document.getElementsByTagName("p"))
-/***OUTPUT: 
- * 
- */
+// console.log(document.getElementsByTagName("p"))
+// /***OUTPUT: fetched elements with tag named p
+//  * 
+//  */
 
-/*************************************** */
-/* 2: only the first paragraph element */
-/***CODE */
-console.log(document.getElementsByTagName("p")[0])
-/***OUTPUT: 
- * 
- */
+// /*************************************** */
+// /* 2: only the first paragraph element */
+// /***CODE */
+// console.log(document.getElementsByTagName("p")[0])
+// /***OUTPUT: fetch the very first element within all elements with p tag
+//  * 
+//  */
 
-/*************************************** */
-/* 3: all elements with the class inner-container */
-/***CODE */
-console.log(document.getElementsByClassName("inner-container"))
-/***OUTPUT: 
- * 
- */
+// /*************************************** */
+// /* 3: all elements with the class inner-container */
+// /***CODE */
+// console.log(document.getElementsByClassName("inner-container"))
+// /***OUTPUT:  fetched all elements with inner-container class name
+//  * 
+//  */
 
-/*************************************** */
-/* 4: the last image element inside the element that has the class img-container */
-/***CODE */
-lastImg = document.getElementsByClassName("inner-container").length
+// /*************************************** */
+// /* 4: the last image element inside the element that has the class img-container */
+// /***CODE */
+// lastImg = document.getElementsByClassName("inner-container").length
 
-console.log(lastImg - 1)
-/***OUTPUT: 
- * 
- */
+// console.log(lastImg - 1)
+// /***OUTPUT: fetched the last image within the array of inner-container thanks to the .lenght property, also added -1 cause arrays are just like this for no reason
+//  * 
+//  */
 
-/*************************************** */
-/* 5A: all h2 elements */
-/* 5B: length of the list in 5A */
-/* 5C: the text content of the first element in the list from 5A */
-/***CODE */
-console.log(document.getElementsByTagName("h2"))
+// /*************************************** */
+// /* 5A: all h2 elements */
+// /* 5B: length of the list in 5A */
+// /* 5C: the text content of the first element in the list from 5A */
+// /***CODE */
+// console.log(document.getElementsByTagName("h2"))
 
-last5b = document.getElementsByClassName("5").length
-console.log(last5b)
+// last5b = document.getElementsByClassName("5").length
+// console.log(last5b)
 
-console.log(document.getElementsByTagName("h2")[0].textContent)
-/***OUTPUT: 
- * 
- */
-
-
-/*************************************** */
-/* 6: the element with id name parent */
-
-console.log(document.getElementById("parent"))
-/***CODE */
-/***OUTPUT: 
- * 
- */
-
-/*************************************** */
-/*** END PART ONE ACCESS */ 
+// console.log(document.getElementsByTagName("h2")[0].textContent)
+// /***OUTPUT:  got all elements with tag name h2, then got to know the number of items in the array in 5B, and finally got the text content inside of the very first item in the array of h2
+//  * 
+//  */
 
 
-/*************************************** */
-/*** START PART TWO MODIFY */ 
-/*************************************** */
-/* 1: Select the first paragraph and replace the text within the paragraph... */
-/***CODE */
+// /*************************************** */
+// /* 6: the element with id name parent */
 
-document.getElementById("2").innerHTML = "<p> New text in paragraph one: text changed by `your name` on the following date: `today's date`. </p>";
-/*************************************** */
-/* 2: Select all elements in the HTML that have the class name content-container
- and change the background color ... of first and second ...*/
-/***CODE */
-document.getElementsByClassName("content-container")[0].style.background = 'orange';
-document.getElementsByClassName("content-container")[1].style.background = 'purple';
+// /***CODE */console.log(document.getElementById("parent"))
+// /***OUTPUT: fetched the element with the id named parent
+//  * 
+//  */
 
-/*************************************** */
-/* 3: Change the src element of the first image element on the page to be ...
-/***CODE */
-document.getElementsByClassName("img-image")[0].src="task-2-images/seven.png"
-/*************************************** */
-/* 4: Select the third paragraph element on the page and 
-replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-/***CODE */
-document.getElementById("4").innerHTML = "<h2> TEST 123 </h2>"
+// /*************************************** */
+// /*** END PART ONE ACCESS */ 
+
+
+// /*************************************** */
+// /*** START PART TWO MODIFY */ 
+// /*************************************** */
+// /* 1: Select the first paragraph and replace the text within the paragraph... */
+// /***CODE */
+
+// document.getElementById("2").innerHTML = "<p> New text in paragraph one: text changed by `your name` on the following date: `today's date`. </p>";
+// /*************************************** */
+// /* 2: Select all elements in the HTML that have the class name content-container
+//  and change the background color ... of first and second ...*/
+// /***CODE */
+// document.getElementsByClassName("content-container")[0].style.background = 'orange';
+// document.getElementsByClassName("content-container")[1].style.background = 'purple';
+
+// /*************************************** */
+// /* 3: Change the src element of the first image element on the page to be ...
+// /***CODE */
+// document.getElementsByClassName("img-image")[0].src="task-2-images/seven.png"
+// /*************************************** */
+// /* 4: Select the third paragraph element on the page and 
+// replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
+// /***CODE */
+// document.getElementById("4").innerHTML = "<h2> TEST 123 </h2>"
 
 /*************************************** */
 /* 5: Select the fourth paragraph element on the page and 
 add to the existing content an h2 element containing the text `TEST 123`
 /***CODE */
-var paragraph = document.getElementById("5")
-var text = "<h2> TEST 123 </h2>"
+// var paragraph = document.getElementById("5")
+// var text = "<h2> TEST 123 </h2>"
 
-paragraph.innerHTML += text
+// paragraph.innerHTML += text
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
 /***CODE */
 
+// var newImg = document.createElement("img")
+// //giving a source to our new img element
+// newImg.setAttribute('src', 'task-2-images/one.png')
+
+
+// document.getElementById("6").appendChild(newImg)
 
 
 /*************************************** */
@@ -114,6 +121,12 @@ assign the element from innerContainers variable with the same index
 (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
 a background using that color.
 /***CODE */
+
+// let colors = ['red','blue','green','orange'];
+// var innerContainers = document.getElementsByClassName("inner-container");
+
+
+
 
 /*************************************** */
 /*** END PART TWO MODIFY */ 
@@ -133,6 +146,16 @@ a background using that color.
 /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
 passing the current allPTagsThree element as the parent with each iteration.*/
 /***CODE */
+var allPTagsThree = document.getElementsByClassName("p")
+console.log(allPTagsThree)
+
+
+function customCreateElement(parent){
+
+    let newP= document.createElement("p")
+    newP.textContent = "using create element"
+    parent.appendChild(newP)
+}
 
 
 /***EXPLANATION::
