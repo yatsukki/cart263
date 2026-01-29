@@ -185,7 +185,24 @@ function customCreateElement(parent){
 
 /***CODE */
 
+function customNewBoxCreate (parent){
+    let newDiv = document.createElement("div")
+    //adding class to newDiv
+    newDiv.classList.add("testDiv")
+    parent.appendChild(newDiv);
 
+    return newDiv
+}
+
+let parent = document.querySelector("#new-grid")
+//making 10 by 10 grid with the help of a loop
+for (let x=0; x<10; x++){
+    for (let y=0; y<10; y++){
+     /*just add let "whatever" = if you want it to rerturn  */ let returnedDiv =  customNewBoxCreate(parent);
+     returnedDiv.style.top = y*40+"px"; //make sure to add the measurement or else it wont change shit
+     returnedDiv.style.left = x*40+"px";
+    }
+}
 /***EXPLANATION::
  * 
  * 
