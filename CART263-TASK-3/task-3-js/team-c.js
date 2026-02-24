@@ -28,64 +28,40 @@ function setup_C() {
     Newbutton.id = 'cool-button';
     Newbutton.classList.add('stupid-button');
 
-
-
     Newbutton.textContent= 'Click';
     parentCanvas.appendChild(Newbutton);
     console.log("in ani-A -teamC");
 
-    //changing button textContent
-    let guuNumberCounter = 1;
-    //creating container
-    let guuContainer = document.createElement("div");
-    
-    
-    //creating grid
-    guuContainer.classList.add("guuGrid")
-    guuContainer.style.width = "100%"
-    guuContainer.style.height = "auto"
-    guuContainer.style.display = "grid"
-    
-    
     Newbutton.addEventListener("click", function (e){
-      
+      //creating div  
+      let guuContainer = document.createElement("div");
       //creating image
       let guu = document.createElement("img");
       //chaging attributes
-      guu.classList.add("guuImage")      
-      guu.style.display = "block"
-      guu.style.width = "100%"
-      guu.style.height = "100%"
+      guu.id = "guu"
       guu.setAttribute("src","guu.gif");
-      
+      guu.setAttribute("width","fit-content")
+      guu.setAttribute("height","100%")
 
       
-
-      //increasing gridsize along with clicks
-      let gridSize = Math.ceil(Math.sqrt(guuNumberCounter));
-      guuContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+      guuContainer.setAttribute("width","100%")
+      guuContainer.setAttribute("height","100%")
+      guuContainer.id = "guuGrid"
 
       //parenting
-      guuContainer.appendChild(guu)
       parentCanvas.appendChild(guuContainer);
-      
-      Newbutton.textContent = guuNumberCounter
-      //fucntion to update button
-      function updateStupidButton(){
-        document.getElementById("cool-button").innerHTML = guuNumberCounter
-      }
-      
-      //increasing number on button
-      function incrementAC(){
-        guuNumberCounter++
-        updateStupidButton();
-        console.log("shit is updated")
-      }
+      guuContainer.appendChild(guu)
 
-      incrementAC();
+      //changing button textContent
+      Newbutton.textContent = '1'
+
 
     })
-    
+    for (let i= 1; i<2; i++){
+
+
+    }
+
   }
   
   

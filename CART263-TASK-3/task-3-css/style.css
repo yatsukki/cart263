@@ -167,10 +167,6 @@ body{
   color: rgb(0, 0, 0);
   padding: 10px;
   border-style:solid;
-  position:absolute;
+  width: auto;
   
-}
-
-#guu {
-  max-height: 100%;
 }
