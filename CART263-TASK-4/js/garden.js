@@ -43,13 +43,11 @@ let garden = {
     garden.sky.skyDiv.style.background = `rgb(${garden.sky.skyColor.r},${garden.sky.skyColor.g},${garden.sky.skyColor.b})`;
     document.getElementsByTagName("main")[0].appendChild(garden.sky.skyDiv);
     //sun
-    bee.renderBee();
     sun.renderSun();
-
-    // test bee render 
-    bee.animateBee();
-   
-
+    
+    
+    
+    
     //grass
     garden.grass.grassDiv.classList.add("grass");
     garden.grass.grassDiv.style.background = `rgb(${garden.grass.grassColor.r},${garden.grass.grassColor.g},${garden.grass.grassColor.b})`;
@@ -73,7 +71,11 @@ let garden = {
         // Add the flower to the array of flowers
         garden.flowers.push(flower);
       }
+  // test bee render 
+      bee.renderBee();
+      bee.animateBee();
 
+      
       for (let i = 0; i < garden.numFlowers; i++) {
         // Add the flower to the array of flowers
         garden.flowers[i].renderFlower();
