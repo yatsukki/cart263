@@ -1,35 +1,85 @@
-class bee {
-  constructor() {
-    // We write instructions to set up a Flower here
-    // Position and size information
-    this.x = Math.random() * (window.innerWidth);
-    this.y = Math.random() * 120;
-    this.size = 40;
-    this.stemLength = 75;
-    this.stemThickness = 10;
-    this.petalThickness = 8;
-    this.flowerStemDiv = document.createElement("div");
-    this.flowerPetalDiv = document.createElement("div");
 
-    // Color information
-    this.stemColor = {
-      r: 50,
-      g: 150,
-      b: 50,
-    };
-    this.petalColor = {
-      r: 200,
-      g: 50,
-      b: 50,
-    };
-    this.centreColor = {
-      r: 50,
-      g: 0,
-      b: 0,
-    };
+class Bee {
+  // Create a new Bee object
+  constructor(x = 100, y = 100, width = 75, height = 75, tintColor = "transparent", homeBeehive = null, vx = 0, vy =0 ) { 
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.tintColor = tintColor; 
+
+    this.homeBeehive = homeBeehive;
+    
+    // Make the wrapper div
+    this.body = document.createElement("div"); 
+    //velocitiy for bee
+    this.vx = vx;
+    this.vy = vy; 
+  }
+
+  // Since I uploaded a PNG and we need to modify the color, I'll create a tint layer and mask out the transparent background
+  renderBee() {
+    // Wrapper div
+    this.body.classList.add("bee");
+    this.body.style.position = "absolute";
+    this.body.style.width = this.width + "px";
+    this.body.style.height = this.height + "px";
+    this.body.style.left = this.x + "px";
+    this.body.style.top = this.y + "px";
+
+    // Bee image
+    let beeImg = document.createElement("img");
+    beeImg.src = "./media/Bee.png";
+    beeImg.style.width = "100%";
+    beeImg.style.height = "100%";
+    beeImg.style.objectFit = "contain";
+    beeImg.style.position = "absolute"; // Stack it inside the wrapper
+
+    // Tinted overlay
+    let tintLayer = document.createElement("div");
+    tintLayer.style.width = "100%";
+    tintLayer.style.height = "100%";
+    tintLayer.style.position = "absolute"; // Stack exactly on top of the image
+    
+    // Apply the color from the constructor parameter
+    tintLayer.style.backgroundColor = this.tintColor; 
+    
+    // Mask out the background so that only the bee is colored
+    tintLayer.style.maskImage = "url('./media/Bee.png')";
+    tintLayer.style.maskSize = "contain";
+    
+    // Blend the tint and bee colors
+    tintLayer.style.mixBlendMode = "multiply"; 
+
+    // Put it all together
+    this.body.appendChild(beeImg);
+    this.body.appendChild(tintLayer);
+    document.getElementsByTagName("main")[0].appendChild(this.body);
+  }
+  animateBee() {
+
+  //making the velocity velociting
+  this.vx += Math.random() * 0.4 - 0.2;
+  this.vy += Math.random() * 0.4 - 0.2;
+  // adding it to our position
+  this.x += this.vx;
+  this.y += this.vy;
+
+  this.body.style.left = this.x + "px";
+  this.body.style.top = this.y + "px";
+
+  //keeping it inbound
+  if (this.x < 0 || this.x > window.innerWidth - this.width) {
+  this.vx *= -1;
+}
+
+if (this.y < 0 || this.y > window.innerHeight - this.height) {
+  this.vy *= -1;
+}
+  //callback so it keeps animating or wtv
+  if (this.x < window.innerWidth) {
+    window.requestAnimationFrame(() => this.animateBee());
   }
 }
 
-
-
-/*in the bee class add a boolean for hiding the bee, and a condotional of if hidden is true, moves to x y that will represnet the beehive entrance */
+}

@@ -31,6 +31,10 @@ let garden = {
   };
   // new  sun instancce
   let sun =  new Sun(10,10,{r: 240, g: 206,b: 83})
+  
+  // Test bee
+  let bee = new Bee();
+
 
   function createAndRenderTheGarden() {
     /* note how we use dot notation....*/
@@ -39,7 +43,12 @@ let garden = {
     garden.sky.skyDiv.style.background = `rgb(${garden.sky.skyColor.r},${garden.sky.skyColor.g},${garden.sky.skyColor.b})`;
     document.getElementsByTagName("main")[0].appendChild(garden.sky.skyDiv);
     //sun
+    bee.renderBee();
     sun.renderSun();
+
+    // test bee render 
+    bee.animateBee();
+   
 
     //grass
     garden.grass.grassDiv.classList.add("grass");
@@ -70,7 +79,11 @@ let garden = {
         garden.flowers[i].renderFlower();
       }
   }
+
+
   createAndRenderTheGarden();
+  
+
 }
 
   
