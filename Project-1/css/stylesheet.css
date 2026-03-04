@@ -1,0 +1,25 @@
+.canvas {
+    overflow: auto;
+    width: 1000px;
+    height: 800px;
+    background-color: black;  
+}
+
+.paintButton{
+    padding: 10px 10px 10px 10px;
+}
+
+.drawingArea {
+  width: auto;
+  height:  90%;
+  background-color: rgb(245, 239, 223);  
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  
+}
+.buttonContainer {
+    display: flex;
+    padding-left: 10px;
+    
+    align-content: end;
+}
