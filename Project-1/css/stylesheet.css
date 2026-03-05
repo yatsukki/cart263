@@ -1,8 +1,7 @@
-.canvas {
-    overflow: auto;
-    width: 1000px;
-    height: 800px;
-    background-color: black;  
+canvas {
+    width: 500px;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
 }
 
 .paintButton{
@@ -10,11 +9,8 @@
 }
 
 .drawingArea {
-  width: auto;
-  height:  90%;
-  background-color: rgb(245, 239, 223);  
-  margin: 10px 10px 10px 10px;
-  padding: 10px 10px 10px 10px;
+  width: 500px;
+background-color: beige;
   
 }
 .buttonContainer {
