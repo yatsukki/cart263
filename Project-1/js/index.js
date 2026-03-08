@@ -1,38 +1,51 @@
 window.onload = setup;
 function setup(){
 
-    //grabbing the canvas
-    const canvas = document.getElementsByClassName("drawingArea")[0]
-    const ctx = canvas.getContext("2d")
     
-    //drawing states
-    let currentTool = null;
-    let isDrawing = false;
     
-    //grabbing the pencil button
-    const pencilBtn = document.getElementById("pencil");
-    
-    pencilBtn.addEventListener("click",() => {
-        console.log("Pencil selected");
-        currentTool = "pencil";
-    })
+    //grabbing the cat button
+    const catBtn = document.getElementById("neko");
 
+    var defaultCat = "media/cat-default.png";
+    var hoverCat = "media/cat-hover.png"
+    var clickCat = "media/cat-pressed.png"
+    var source = catBtn.src;
+    
+
+    
     //functions for the event listeners
-
-    function onMouseMove(){
-        console.log("poop.com")
+    
+    function onMouseOver(){
+        console.log("hovering...")
+        catBtn.src = hoverCat
     }
     function onMouseDown(){
-        console.log("mouse is down")
+        console.log("meow")
+        setTimeout(() => {
+        console.log("loading...");
+        catBtn.src = clickCat
+        window.open("https://cataas.com/cat/gif")
+        }, 200);
     }
     function onMouseUp(){
         console.log("mouse has been released")       
+        catBtn.src = hoverCat
+    }
+    function onMouseOut(){
+        console.log("mouse is out")       
+        catBtn.src = defaultCat
+    }
+    function onClick(){
+        console.log("clicked")       
+        catBtn.src = clickCat
     }
 
     //adding event listeners to actions 
-    canvas.addEventListener("mousemove", onMouseMove)
-    canvas.addEventListener("mousedown", onMouseDown)
-    canvas.addEventListener("mouseup", onMouseUp)
+    catBtn.addEventListener("mouseover", onMouseOver)
+    catBtn.addEventListener("mousedown", onMouseDown)
+    catBtn.addEventListener("mouseup", onMouseUp)
+    catBtn.addEventListener("mouseout", onMouseOut)
+    catBtn.addEventListener("click", onClick)
 
     
 
