@@ -48,7 +48,7 @@ function setup(){
         const catImage = document.createElement("img")
         catImage.classList.add('cat-image')
         //giving image source
-        catImage.src = 'https://cataas.com/cat/gif'
+        catImage.src = 'https://cataas.com/cat/gif?'+ Date.now()
         //appending
         catFrameDiv.appendChild(catImage)
 

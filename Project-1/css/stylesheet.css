@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'DarumaDrop'; 
+  src: url('../fonts/DarumadropOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'ds'; 
+  src: url('../fonts/Nintendo-DS-BIOS.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+.dsFont{
+    font-family: 'ds';
+    font-size: 20px;
+}
 canvas {
     width: 500px;
     aspect-ratio: 1/1;
@@ -7,30 +26,59 @@ canvas {
 .paintButton{
     padding: 10px 10px 10px 10px;
 }
-
+.whiteFont{
+    color: azure;
+}
 .drawingArea {
   width: 500px;
 background-color: beige;
   
 }
-
+.bluebar {
+    display: flex;
+    align-items: center;
+    background-color: blue;
+    padding: 10px 10px 10px 10px;
+    height: 20px;
+    border-style: double;
+    border-color: white;
+}
 .catContainer{
+    border-style: ridge;
+    border-color: rgb(255, 229, 229);
     display: flex;
     justify-content: center;
+    padding: 40px 40px 40px 40px;
+    border-width: 5px;
+}
+.vertFlex {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+.PM {
+    font-family:'ds';
+    font-size: 24px;
+    position: absolute;
+    top: 100px;
 }
 
 .buttonContainer {
     display: flex;
     justify-content: center;
-    height: 200px;
+    height: 536px;
     width: 100%;
     align-content: end;
+    gap: 30px;
+    
 }
 
 .buttonContainer {
     display: flex;
-   align-items: center;
-    height: 600px;
+    width: fit-content;
+    background-color: #fff8dc;    
+    align-items: end;
+    height: 433px;
 }
 #neko {
     height: 200px;
@@ -39,8 +87,10 @@ background-color: beige;
     position: relative;
 }
 .cat-frame{
+    border-style: ridge;
+    border-color: #1953ff;
+    height: 427px;
     position: relative;
-    height: 700px;
     z-index: 2;
 }
 
@@ -52,3 +102,5 @@ background-color: beige;
     height: 100%;
     z-index: 0;
 }
+
+
