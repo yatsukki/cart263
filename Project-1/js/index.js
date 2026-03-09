@@ -22,34 +22,39 @@ function setup(){
 
     //fetching image
 
-    const catFrame = document.createElement("img")
-    const catImage = document.createElement("img")
+    let catFrameDiv = document.createElement("div")
+    let catFrame = document.createElement("img")
 
     //giving classes to elements
     catFrame.classList.add('cat-frame')
-    catImage.classList.add('cat-image')
-
+    catFrameDiv.classList.add('cat-frame-div')
     //giving image source
-    catFrame.src = 'media/cat-frame.png'
-    catImage.src = 'https://cataas.com/cat/gif'
-
-
-
+    catFrame.src = 'media/cat-frame.gif'
+    
     //appending elements
-
+    
     const displayContainer = document.getElementById("displayContainer")
-
-    catFrame.appendChild(catImage)
-    displayContainer.appendChild(catFrame)
-
+    
+    displayContainer.appendChild(catFrameDiv)
+    catFrameDiv.appendChild(catFrame)
+    
+    
+    //Mouse click
+    
     function onMouseDown(){
         console.log("meow")
-        //delaying it so we can see the button being pressed
-        setTimeout(() => {
-            console.log("loading...");
-            catBtn.src = clickCat
-            window.open("https://cataas.com/cat/gif")
-        }, 200);
+        
+        //creating gif
+        const catImage = document.createElement("img")
+        catImage.classList.add('cat-image')
+        //giving image source
+        catImage.src = 'https://cataas.com/cat/gif'
+        //appending
+        catFrameDiv.appendChild(catImage)
+
+        //switching buttons
+        catBtn.src = clickCat
+        
     }
     function onMouseUp(){
         console.log("mouse has been released")       
@@ -61,7 +66,7 @@ function setup(){
     }
     function onClick(){
         console.log("clicked")       
-        catBtn.src = clickCat
+        
     }
 
     //adding event listeners to actions 
