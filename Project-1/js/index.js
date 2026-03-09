@@ -19,12 +19,36 @@ function setup(){
         console.log("hovering...")
         catBtn.src = hoverCat
     }
+
+    //fetching image
+
+    const catFrame = document.createElement("img")
+    const catImage = document.createElement("img")
+
+    //giving classes to elements
+    catFrame.classList.add('cat-frame')
+    catImage.classList.add('cat-image')
+
+    //giving image source
+    catFrame.src = 'media/cat-frame.png'
+    catImage.src = 'https://cataas.com/cat/gif'
+
+
+
+    //appending elements
+
+    const displayContainer = document.getElementById("displayContainer")
+
+    catFrame.appendChild(catImage)
+    displayContainer.appendChild(catFrame)
+
     function onMouseDown(){
         console.log("meow")
+        //delaying it so we can see the button being pressed
         setTimeout(() => {
-        console.log("loading...");
-        catBtn.src = clickCat
-        window.open("https://cataas.com/cat/gif")
+            console.log("loading...");
+            catBtn.src = clickCat
+            window.open("https://cataas.com/cat/gif")
         }, 200);
     }
     function onMouseUp(){

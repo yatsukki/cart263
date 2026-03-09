@@ -30,3 +30,11 @@ background-color: beige;
 #neko {
     height: 100%;
 }
+
+.cat-frame{
+    position: relative;
+}
+
+.cat-image{
+    position: absolute;
+}
