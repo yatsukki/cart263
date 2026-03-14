@@ -76,6 +76,22 @@ function setup(){
     catBtn.addEventListener("mouseout", onMouseOut)
     catBtn.addEventListener("click", onClick)
 
+let pressMe = document.getElementById("instruction");
+let time = 0;
+let amplitude = 20; 
+let speed = 0.01;   
+
+function pressMeMove(){
     
+    time += speed;
+
+    let ypos = Math.sin(time) * amplitude;
+
+    pressMe.style.transform = `translateY(${ypos}px)`;
+
+    requestAnimationFrame(pressMeMove);
+}
+
+requestAnimationFrame(pressMeMove);
 
 }
