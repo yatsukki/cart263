@@ -29,15 +29,10 @@ canvas {
 .whiteFont{
     color: azure;
 }
-.drawingArea {
-  width: 500px;
-background-color: #F7E6D2;
-  
-}
 .bluebar {
     display: flex;
     align-items:center;
-    background-color: #234B90;
+    background-color: #0121CA;
     padding: 10px 10px 10px 10px;
     height: 20px;
     border-style: double;
@@ -56,14 +51,14 @@ background-color: #F7E6D2;
     display: flex;
     flex-direction: column;
     width: fit-content;
-       
+    
 }
 .PM {
     font-family:'ds';
     font-size: 24px;
     position: absolute;
     top: 160px;
-    color: #F7E6D2;
+    color: #FEE3C6;
 }
 
 .buttonContainer {
@@ -74,13 +69,13 @@ background-color: #F7E6D2;
     align-content: end;
     gap: 30px;
     padding: 30px;
-    background-color: #234B90;  
+    background-color: #0121CA;  
     
 }
 
 .bb{
     padding: 30px;
-    background-color: #F7E6D2; 
+    background-color: #FEE3C6; 
     
 }
 
@@ -99,7 +94,7 @@ background-color: #F7E6D2;
 }
 .cat-frame{
     border-style: solid;
-    border-color: #f7e6d2;
+    border-color: #FEE3C6;
     height: 100%;
     position: relative;
     z-index: 2;
@@ -114,4 +109,49 @@ background-color: #F7E6D2;
     z-index: 0;
 }
 
+.drawingApp{
+    display: flex;
+    flex-direction: column;
+    position:fixed;
+    top: 2%;
+    left: 29%;
+    width: 908px;
+    z-index: 3;
+    height: 700px;
+    background-color: #FEE3C6;
+}
 
+.bottomBlueBar{
+    border-style: solid;
+    border-color: blue;
+    height: 40px;
+    margin: 5px;
+    border-width: 2px;
+}
+
+.drawingArea{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    gap: 10px;
+}
+.drawingWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    
+}
+
+.rightSide {
+    background-color: rgb(236, 243, 199);
+    height: 100%;
+    width: 80%;
+}
+
+.leftSide {
+    width: 20%;
+    background-color: cadetblue;
+}

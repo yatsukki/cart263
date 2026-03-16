@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.palette {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  stroke: none;
+}
+
+.palette button {
+  width: 90px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+canvas {
+  display: block;
+}
+#redBtn {
+  background-color: red;
+  stroke: none;
+}
+#yellowBtn {
+  background-color: yellow;
+  stroke: none;
+}
+
+#blueBtn {
+  background-color: rgb(45, 16, 210);
+  stroke: none;
+}
+#redBtn,
+#yellowBtn,
+#blueBtn {
+  border: none;
+  border-radius: 12px;
+}
+
+#colorPalette {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.colorBox {
+  width: 25px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+.colorBox:hover {
+  transform: scale(1.1);
+}
+
+#brushPalette {
+  width: 70px;
+  padding: 8px;
+  background: #f3e6d3;
+  border: 2px solid #333;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brushOption {
+  height: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brushOption span {
+  display: block;
+  width: 50px;
+  background: #3b001f;
+  border-radius: 2px;
+}
+
+.brushOption:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.brushOption.active {
+  border: 1px solid #333;
+  background: rgba(0, 0, 0, 0.12);
+}
