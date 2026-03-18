@@ -13,6 +13,8 @@
   font-style: normal;
   font-display: swap; 
 }
+
+
 .dsFont{
     font-family: 'ds';
     font-size: 20px;
@@ -110,13 +112,13 @@
 }
 
 .brushOption {
-  height: 20px;
+  
   background: transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  padding: 3px;
 }
 .brushOption span {
   display: block;
@@ -132,6 +134,13 @@
 .brushOption.active {
   border: 1px solid #333;
   background: rgba(0, 0, 0, 0.12);
+}
+
+#brushPalette{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+
 }
 
 /* end of Ray's classes */
@@ -186,16 +195,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: fit-content;
     
-    width: 1000px;
 }
 
 .leftSide {
-    width: 10%;
-    
-    border-style: solid;
-    height: fit-content;
-    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .paletteContainer {
@@ -235,4 +242,53 @@ canvas {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
   
+}
+
+#iconsContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    
+}
+
+.icons{
+  width:20px;
+  height:20px;
+  background-image:url("/media/tools-spaced.png");
+  background-repeat:no-repeat;
+  border-style: solid;
+  border-width: 1px;
+
+}
+
+.star{
+  background-position:-14px -13px;
+}
+
+.selection{
+background-position:-45px -13px;
+}
+.eraser{
+background-position:-77px -13px;
+}
+.bucket{
+background-position:-110px -13px;
+}
+.pipette{
+background-position:-143px -13px;
+}
+.zoom{
+background-position:-173px -13px;
+}
+.pencil{
+background-position:-206px -13px;
+}
+.brush{
+background-position:-238px -13px;
+}
+.spray{
+background-position:-270px -13px;
+}
+.text{
+background-position:-301px -13px;
 }
