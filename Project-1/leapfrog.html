@@ -11,7 +11,9 @@
         width: 100vw;
         height: 100vh;
         overflow: hidden;
-        background: rgb(0, 0, 0);
+        background-image: url(media/bg.png);
+        background-repeat: repeat;
+        background-color: #413C9D;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -19,7 +21,7 @@
 
       .console {
         position: relative;
-        width: 900px;
+        /* width: 900px; */
         max-width: 90vw;
         will-change: transform;
         transition: transform 0.08s linear;
@@ -30,14 +32,14 @@
         display: block;
       }
 
-      .screen {
+      /* .screen {
         position: absolute;
-        left: 32%;
-        top: 30%;
+        left: 0%;
+        top: 10%;
         width: 38%;
         height: 46%;
         overflow: hidden;
-      }
+      } */
 
       .screen video {
         width: 97%;
@@ -53,18 +55,18 @@
 
   <body>
     <div class="console" id="console">
-      <img src="leapfrog0.png" alt="controller" />
+      <img src="media/gameboy.gif" alt="gameboy" style="width: 300px;">
 
-      <div class="screen">
+      <!-- <div class="screen">
         <video
           id="screenVideo"
-          src="gamekerven.mp4"
+          src="media/gamekerven.mp4"
           autoplay
           muted
           loop
           playsinline
         ></video>
-      </div>
+      </div> -->
     </div>
 
     <script>
@@ -103,13 +105,13 @@
       });
 
       animate();
-
+//redirect
       document.addEventListener("keydown", (event) => {
-  
-  if (event.key === 'Space') {
+  if (event.key === ' ') {
     console.log('The space key was pressed!');
-    
-  }});
+    window.location.href = "index.html"
+  }
+});
       
     </script>
   </body>
