@@ -25,6 +25,11 @@ body{
     font-size: 20px;
 }
 
+
+.dsFont .bluefont{
+    color: #0121CA;
+}
+
 .paintButton{
     padding: 10px 10px 10px 10px;
 }
@@ -197,8 +202,8 @@ body{
 .drawingArea{
     display: flex;
   flex-direction: row;
-  height: 600px;
-  padding: 10px;
+  height: 400px;
+  padding: 17px;
   justify-content: space-between;
   gap: 10px;
 }
@@ -214,7 +219,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 700px
+    width: 708px
     
 }
 
@@ -254,7 +259,8 @@ body{
 }
 
 canvas {
-   
+    width: 100%;
+  height: auto;
     border: 1px solid black;
     
 }
