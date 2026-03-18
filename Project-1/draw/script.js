@@ -4,8 +4,9 @@ let eraserSize = 24;
 let brushColor = "black";
 
 function setup() {
+  //creating canvas
   let canvas = createCanvas(800, 500);
-  canvas.parent("canvasContainer");
+  canvas.parent("canvasScroll");
   background(255);
 }
 
@@ -22,17 +23,17 @@ function draw() {
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
 }
-
+//eraser tool event listener
 document.addEventListener("keydown", function (event) {
   if (event.key === " ") {
     erasing = !erasing;
     event.preventDefault();
   }
-
+ //increasing brush size
   if (event.key === "[") {
     brushSize += 4;
   }
-
+//decreasing brush size
   if (event.key === "]") {
     brushSize = Math.max(4, brushSize - 4);
   }
@@ -51,7 +52,9 @@ let colors = [
   "#000000",
 ];
 
+//fetching div for the color palette
 let palette = document.getElementById("colorPalette");
+//applying function to each items in array of colors
 
 colors.forEach(function (color) {
   let box = document.createElement("div");
@@ -66,6 +69,7 @@ colors.forEach(function (color) {
   palette.appendChild(box);
 });
 
+//fetching brush palette div
 let brushPalette = document.getElementById("brushPalette");
 
 brushSizes.forEach(function (size) {

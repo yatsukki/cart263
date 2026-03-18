@@ -5,7 +5,7 @@
         <!-- link to css-->
         <link rel="stylesheet" href="css/stylesheet.css">
           <!-- link to main script-->
-          
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
         </head>
         <body>
             <main>
@@ -33,17 +33,26 @@
 
                         <div class="drawingArea"><!--middle part with horizontal flex-->
                             <div class="leftSide"> <!-- left side random buttons -->
+                                <div> <!-- icons -->
+
+                                </div>
+
+                                <div id="brushPalette"> <!-- brush palette -->
+
+                                </div>
 
                             </div>
                             <div class="rightSide"> <!-- right side of middle part with vertical flex and canvas-->
-                                <div > <!-- canvas and scroll img -->
-                                    <canvas>
-
-                                    </canvas>
+                                <div id="canvasScroll" > <!-- canvas and scroll img -->
+                                    <div id="canvasContainer"></div>
+                                        
+                                    
+                                    <img src="/media/scrollbar1.png" alt="" class="scrollbar">
+                                    <img src="/media/scrollbar2.png" alt="" class="scrollbar">
                                 </div>
-                                <div class="colorPalette"> <!-- color palette -->
+                                <div class="paletteContainer" > <!-- color palette -->
                                     <img src="/media/smile.png" alt="" id="smile">
-                            
+                                    <div class="colorPalette" id="colorPalette"></div>
                                 </div>
                             </div>
                         </div> 
