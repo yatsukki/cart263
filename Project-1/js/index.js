@@ -1,8 +1,12 @@
 window.onload = setup;
 function setup(){
 
-    
-    
+    //displaying time at bottom of canvas
+    let bottomCanvas = document.getElementById('bottomBlueBar')
+
+    let currentDate = new Date();
+    bottomCanvas.textContent = currentDate
+    bottomCanvas.classList.add("dsFont")
     setupDrawing();
     //grabbing the cat button
     const catBtn = document.getElementById("neko");
@@ -23,7 +27,7 @@ function setup(){
 
     //fetching image
 
-    let catFrameDiv = document.createElement("div")
+    /* let catFrameDiv = document.createElement("div")
     let catFrame = document.createElement("img")
 
     //giving classes to elements
@@ -37,9 +41,9 @@ function setup(){
     const displayContainer = document.getElementById("displayContainer")
     
     displayContainer.appendChild(catFrameDiv)
-    catFrameDiv.appendChild(catFrame)
+    catFrameDiv.appendChild(catFrame) */
     
-    
+    const catFrameDiv = document.querySelector(".cat-frame-div");
     //Mouse click
     
     function onMouseDown(){
@@ -100,7 +104,7 @@ requestAnimationFrame(pressMeMove);
 //2nd script paste
 
 let erasing = false;
-let brushSize = 6;
+let brushSize = 0.5;
 let eraserSize = 24;
 let brushColor = "black";
 
@@ -142,7 +146,7 @@ document.addEventListener("keydown", function (event) {
     }
     //decreasing brush size
     if (event.key === "[") {
-        brushSize = Math.max(4, brushSize - 4);
+        brushSize = Math.max(0.5, brushSize - 4);
     }
 });
 
@@ -159,7 +163,7 @@ let colors = [
     "#000000",
 ];
 
-let brushSizes = [4,8,12,16,24];
+let brushSizes = [0.5,8,12,16,24];
 
 //fetching div for the color palette
 
@@ -201,4 +205,15 @@ brushSizes.forEach(function (size) {
 
     option.classList.add("active");
   });
+
+
+  //clearing button
+  let smile = document.getElementById('smile')
+
+  function mousePressed (){
+    clear();
+    background(255);
+  }
+  
+  smile.addEventListener("click",mousePressed)
 });

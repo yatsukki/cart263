@@ -6,6 +6,18 @@
         <link rel="stylesheet" href="css/stylesheet.css">
           <!-- link to main script-->
           <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+          <script type="module">
+  import { createDraggable } from 'https://esm.sh/animejs';
+
+  window.addEventListener('DOMContentLoaded', () => {
+    createDraggable('.drawingApp', {
+      trigger: '.bluebarDrag'
+      
+    });
+  });
+</script>
+  
+
         </head>
         <body>
             <main>
@@ -18,7 +30,14 @@
                         <div class="buttonContainer" id="displayContainer">
                             <div class="catContainer"  id="catbutton">
                                 <img src="media/cat-default.png" id="neko">
+
+                                
                                 <p class="PM" id="instruction">Press me! :3</p>
+
+                            </div>
+
+                            <div class="cat-frame-div">
+                                <img src="media/cat-frame.gif" class="cat-frame">
                             </div>
                         </div>
                     </div>
@@ -26,7 +45,7 @@
                 
                 <div class="drawingApp">
                     <div class="drawingWrap"> <!--vert flex with 3 divs-->
-                        <div class="bluebar">
+                        <div class="bluebarDrag">
                             <p class=" dsFont whiteFont">Untitled.psd</p>
                             <img src="/media/cross_small.png" alt="">
                         </div>
@@ -54,7 +73,7 @@
                             </div>
                             <div class="rightSide"> <!-- right side of middle part with vertical flex and canvas-->
                                 <div id="canvasScroll" > <!-- canvas and scroll img -->
-                                    <div id="canvasContainer"></div>
+                                    <div id="canvasContainer" style="width: 100%;"></div>
                                         
                                     
                                     <img src="/media/scrollbar1.png" alt="" class="scrollbar">
@@ -67,7 +86,7 @@
                             </div>
                         </div> 
 
-                        <div  class ="bottomBlueBar">
+                        <div  class ="bottomBlueBar" id="bottomBlueBar">
 
                         </div>
 
