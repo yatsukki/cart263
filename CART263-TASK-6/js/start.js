@@ -72,7 +72,7 @@ function animationLoop(){
  * Please for this exercise - do not add any new shapes other than the circular object...
  * 
  */
-
+CircularObj.x = mouseX
 
 /** TASK 2:(Drawing Board B) - 
  *  1: Affect the rectangle by input from the microphone somehow, in real time...
