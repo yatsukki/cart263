@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url("../media/bg.png");
+  background-image: url(../media/bg.png);
   background-repeat: repeat;
   background-color: #413c9d;
 }
@@ -256,7 +256,7 @@ canvas {
 .icons {
   width: 20px;
   height: 20px;
-  background-image: url("../media/tools-spaced.png");
+  background-image: url(../media/tools-spaced.png);
   background-repeat: no-repeat;
   border-style: solid;
   border-width: 1px;
