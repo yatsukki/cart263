@@ -29,6 +29,10 @@ catch (err) {
     console.log("had an error getting the microphone");
   }
 
+  function processAudio(microphoneData){
+    
+  }
+
 visualizeTimeAndFreq();
     function visualizeTimeAndFreq() {
       const WIDTH = 500;
