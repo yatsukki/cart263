@@ -1,10 +1,10 @@
 ## Project 1 responde
 
-### Project 1: Skyla, Abhi, Sophia
+### Project 1: Skyla, Abhi, Sophia https://browneyegirl.github.io/explore/index.html
 
 For their project, they made a website that helps people who are into urban exploration (AKA urbex) find abandoned buildings. When asked how they managed to make the 3D rotation column, it turns out that it was all ThreeJs, something we haven’t seen in class yet. As for the workflow, I couldn’t fathom how they managed to build this whole thing from the ground up, so I also had to ask about it. They first separated each steps into goals in form of components to then later integrate all of them together into one big project. The things I found the most compelling about their project was obviously the accurate map with the 3D buildings. The 3D column was also an amazing touch that I will probably try to integrate in my future projects at some point. The canvas inside the about page with the spray paint brush really made want to integrate it inside my own project
 
-### Project 2: [https://namikoko.github.io/project1/]Namiko
+### Project 2: Namiko https://namikoko.github.io/project1/
 It was very intriguing to see how useful one can make use of arrays inside of a project, looking at her coding was quite intimidating though, it’s a lot of instances where I can’t even wrap my head around behind how someone would even come up with these formulas for a project. As for the experience, I think the most interesting part of the project was the homepage. The way the words were interacting with the mouse cursor was very responsive and captivating, not so much for the other pages, and unfortunately (for me at least), I get stuck on the “calibration complete” page. Other than that, it’s probably my favorite project out of them all.
 ### Project 3: Huynh Bao Khuong's, https://pentonfreak.github.io/CART263/PROJECT/index.html
 Loved the Naruto reference used on the spacebar hold interaction displaying a pair of sharingans instead of the eyes. I thought the card that reacts to the user pressing down the letter Z was pretty funny since it just looks like the character is losing its mind. As for the code, even though they were simple interactions, I’m kind of surprised that he didn’t use a library for the animations, I feel like he could’ve saved so much time by simply using the anime.js library, all of those interactions could’ve been found in that library.
