@@ -32,22 +32,24 @@ window.onload = function () {
 
    let flavoursArray = donut_as_json.flavours;
   //make a for loop and iterate
-  for (flavour of flavoursArray) {
-    console.log(flavour);
-    let pTag = document.createElement("p");
-    pTag.classList.add("donut_flavour_class");
-    document.getElementById("output_rev").appendChild(pTag);
-    pTag.innerHTML = `Donut flavour : ${flavour.type}`;
-  }
+ for (flavor of flavoursArray) {
+  console.log(flavor)
+  let pTag = document.createElement("p");
+  pTag.classList.add("donut_flavour_class");
+  document.getElementById("output_rev").appendChild(pTag)
+  pTag.innerHTML = `Donut flavor: ${flavour.type}`
+ }
 
   let toppingsArray = donut_as_json.toppings;
-  for (topping of toppingsArray) {
-    console.log(topping.type);
-    let pTag = document.createElement("p");
+  for (topping of toppingsArray){
+    console.log(topping);
+    let pTag = this.document.createElement("p");
+    //add clas to element just created
     pTag.classList.add("donut_topping_class");
-    document.getElementById("output_rev").appendChild(pTag);
-    pTag.innerHTML = `Donut topping : ${topping.type}`;
-};
+    this.document.getElementById("output_rev").appendChild(pTag)
+    pTag.innerHTML = `Donut topping : ${topping.type}`
+
+  }
 
   let donut_as_json_array = [
     {

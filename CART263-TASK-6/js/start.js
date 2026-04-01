@@ -25,9 +25,24 @@ for(let i =0; i<theCanvases.length; i++){
 
 let drawingBoardA = new DrawingBoard(theCanvases[0],theContexts[0],theCanvases[0].id);
 //add a circular object to canvas A
-drawingBoardA.addObj(new CircularObj(100,100,20,"#FFC300","#E6E6FA", drawingBoardA.context))
+let ballX = 100
+//constructor goes like >> constructor(x, y, radius, f_color, s_color, context)
+drawingBoardA.addObj(new CircularObj(ballX,100,20,"#00ff80","#E6E6FA", drawingBoardA.context))
 drawingBoardA.display();
+//animation attempt...
+let time = 0;
+let amplitude = 20;
+let speed = 0.01;
 
+  function animate() {
+    //update position
+    ballX += speed;
+    //clear canvas
+    drawingBoardA
+
+    requestAnimationFrame(animate);
+}
+animate();
 
 
 let drawingBoardB = new DrawingBoard(theCanvases[1],theContexts[1],theCanvases[1].id);
