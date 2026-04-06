@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
+  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 
 // canvas
 const canvas = document.querySelector("canvas#three-ex");
@@ -53,15 +54,126 @@ plane.position.y = - 0.65
 
 scene.add(plane)
 
-window.requestAnimationFrame(animate)
+//initate GLTF
 
-function animate()
-{
+const gltfLoader = new GLTFLoader();
+// add the async function bc you might need to wait for seperate things to load
+let gltfModel = null;
+let gltfDuck = null;
+try{
+  gltfModel = await gltfLoader.loadAsync( 'model/Fox/glTF/Fox.gltf' );
+  gltfDuck = await gltfLoader.loadAsync("model/Duck/glTF/Duck.gltf");
+//   console.log(gltfModel)
+//   addAndRun(gltfModel)'
+
+//add models to an array
+  let objs = []
+  objs.push(gltfModel)
+  objs.push(gltfDuck)
+  addAndRun(objs)
+}
+catch (error){
+console.log(error.message)
+}
+
+
+function addAndRun(loadedObjsArray){
+  let foxModel = loadedObjsArray[0].scene.children[0]
+  let duckModel = loadedObjsArray[1].scene.children[0]
+  
+  foxModel.scale.set(.015,.015,.015)
+  
+  console.log(loadedObjsArray[0])
+ //set scale
+  duckModel.scale.x -=.005
+  duckModel.scale.y -=.005
+  duckModel.scale.z -=.005
+
+//set pos
+  duckModel.position.x =1
+  foxModel.position.z = -5
+
+scene.add(foxModel)
+scene.add(duckModel)
+
+  const mixer = new THREE.AnimationMixer(foxModel)
+  
+  // Access the second animation clip in the array
+  const clip = loadedObjsArray[0].animations[1];
+   //returns a reference to an AnimationAction
+  //https://threejs.org/docs/index.html?q=Anima#AnimationAction
+  const anim_action = mixer.clipAction(clip);
+  
+  // Start playing the animation
+    anim_action.play()
+
+  window.requestAnimationFrame(animate);
+
+  
+  function animate() {
+
+    
+let elapsedTime = 0; //
+window.requestAnimationFrame(animate);
+
+function animate(timer) {
+//calculate the difference since last frame
+  let deltaTime = (timer - elapsedTime) / 1000; //put in secs
+  elapsedTime = timer; //update  new elapsedTime
+
+  // Update controls
+  controls.update();
+    if (mixer) {
+        mixer.update(deltaTime);
+    }
+
+  // fox model
+  foxModel.position.z+=.015
+  // Render
+  renderer.render(scene, camera);
+
+  window.requestAnimationFrame(animate);
+}
 
     // Update controls
-    controls.update()
+
+    controls.update();
+    foxModel.position.z+=.01
     // Render
-    renderer.render(scene, camera)
-    window.requestAnimationFrame(animate)
+    renderer.render(scene, camera);
+    window.requestAnimationFrame(animate);
+  }
+
 }
+
+
+// function addAndRun(loadedObj){
+//   console.log(loadedObj);
+//   let foxModel = loadedObj.scene.children[0]
+//   foxModel.scale.set(.015,.015,.015)
+//   scene.add(foxModel);
+//   window.requestAnimationFrame(animate);
+
+//   function animate() {
+//     // Update controls
+//     controls.update();
+//     // Render
+//     renderer.render(scene, camera);
+//     window.requestAnimationFrame(animate);
+//   }
+// }
+
+
+
+
+
+// function animate()
+// {
+
+//     // Update controls
+//     controls.update()
+//     // Render
+//     renderer.render(scene, camera)
+//     window.requestAnimationFrame(animate)
+// }
 
