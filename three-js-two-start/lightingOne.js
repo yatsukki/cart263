@@ -7,13 +7,14 @@ const sizes = {
     width: 800,
     height: 600
 }
-const canvas = document.querySelector('canvas#three-ex')
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
-camera.position.z = 3;
+//setting up camera then attaching it to scene
+const canvas = document.querySelector('canvas#three-ex')//selecting canvas in index
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)//creating camera
+camera.position.z = 3;//moving it from 0,0,0 position
 scene.add(camera)
 
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas //deciding where it should be displayed, in this case, the canvas element in the html
 })
 renderer.setSize(sizes.width, sizes.height)
 const controls = new OrbitControls(camera, canvas)
