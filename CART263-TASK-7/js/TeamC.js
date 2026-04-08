@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js' //import gltf loader
 
 // Planet class for Team C
 export class PlanetC {
@@ -17,31 +18,60 @@ export class PlanetC {
 
             //material
         const geometryC = new THREE.SphereGeometry(2,15,12)
+        const geometryC1 = new THREE.SphereGeometry(1,15,12)
         
         //TODO: Give it a custom material using THREE.MeshStandardMaterial.
         const materialC = new THREE.MeshStandardMaterial({ color: "#64ff56" }) 
+        const materialC1 = new THREE.MeshStandardMaterial({ color: "#43f9ff" }) 
+
         const mesh = new THREE.Mesh(geometryC,materialC)
+        const mesh2 = new THREE.Mesh(geometryC1,materialC1)
 
         //position
         mesh.position.set(0, 0, -20);
+        mesh2.position.set(0, 4, -5);
         //TODO: Use castShadow and receiveShadow on the mesh and all future ones so they can cast and receive shadows.
+       
+       
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+
         //TODO: Add the planet mesh to the planet group.
 
-        scene.add(mesh)
+        scene.add(mesh, )
+
         
         //STEP 2: 
         //TODO: Add from 1 to 3 orbiting moons to the planet group. 
+        mesh.add(mesh2)
+
         //TODO: The moons should rotate around the planet just like the planet group rotates around the Sun.
 
         //STEP 3:
         //TODO: Load Blender models to populate the planet with multiple props and critters by adding them to the planet group.
+
+            //initate GLTF
+        
+        const gltfLoader = new GLTFLoader();
+
+         //null cuz theyre not loaded yet
+        let gltfUfo = null;
+
+        try {
+           gltfUfo = await gltfLoader.loadAsync('model/ufo/ufo.gltf')
+        }
+
+        catch (error){
+        console.log(error.message)
+        }
+
         //TODO: Make sure to rotate the models so they are oriented correctly relative to the surface of the planet.
         
         //STEP 4:
         //TODO: Use raycasting in the click() method below to detect clicks on the models, and make an animation happen when a model is clicked.
         //TODO: Use your imagination and creativity!
-
         this.scene.add(this.group);
+
     }
     
     update(delta) {
