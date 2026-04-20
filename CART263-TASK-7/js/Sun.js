@@ -39,7 +39,7 @@ export class Sun {
         this.scene.add(this.glow);
         
         // Add corona (particle ring)
-        const coronaParticles = new THREE.BufferGeometry();
+        const coronaParticles = new THREE.BufferGeometry(); //BufferGeometry works like a null layer on ae
         const coronaCount = 200;
         const coronaPositions = new Float32Array(coronaCount * 3);
         for (let i = 0; i < coronaCount; i++) {
