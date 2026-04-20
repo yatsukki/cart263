@@ -1,5 +1,6 @@
 
 let startButton = document.querySelector("#startButton")
+let catAppIcon = document.querySelector("#CatAppGroup")
 
 startButton.addEventListener("mouseover", startHover)
 startButton.addEventListener("mouseout", startOut)
