@@ -16,6 +16,12 @@
         createDraggable(".drawingApp",  {
           trigger: ".bluebarDrag",
         });
+        createDraggable(".vertFlex", {
+          trigger: ".bluebar"
+        })
+        createDraggable("#mp3Player", {
+          trigger: ".mp3BlueBar"
+        })
       });
 
       
@@ -42,7 +48,29 @@
 
           </div>
       </div>  
-      <div class="vertFlex">
+
+      <div id="mp3Player"> <!-- mp3 player -->
+
+        <div class="mp3BlueBar">
+          <p class="dsFont whiteFont">MP3 player</p>
+          <img src="media/cross_small.png" alt="">
+        </div>
+
+        <div class="playCover">
+            <div id="playlist">
+              <div class="trackInfo"><p class="dsFont">#</p> <p class="dsFont">Title</p> </div>
+              
+            </div>
+            <div id="cover">
+              
+            </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="vertFlex" id="vertFlex"> <!-- cat gif engine -->
         <div class="bluebar">
           <p class="dsFont whiteFont">Cat button</p>
           <img src="media/cross_small.png" alt="" />
@@ -62,7 +90,7 @@
         </div>
       </div>
 
-      <div class="drawingApp">
+      <div class="drawingApp" id="drawingApp">
         <p id="eraserInstruction">Press space bar for eraser</p>
         <div class="drawingWrap">
           <!--vert flex with 3 divs-->

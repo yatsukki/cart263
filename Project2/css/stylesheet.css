@@ -5,7 +5,55 @@
   font-style: normal;
   font-display: swap;
 }
+.trackInfo{
+  display: grid;
+  
+}
+.playCover{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+#mp3Player{
+  display: flex;
+  flex-direction: column;
+  background-color: #fee3c6;
+  height: 500px;
+  width: 800px;
+}
+#playlist{
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  height: 300px;
+  width: 55%;
+}
 
+#cover{
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  height: 300px;
+  width: 45%;
+}
+
+
+
+.mp3BlueBar{
+  display: flex;
+  align-items: center;
+  background-color: #0121ca;
+  padding: 10px 10px 10px 10px;
+  height: 20px;
+  border-style: double;
+  border-color: white;
+  justify-content: space-between;
+}
+
+#drawingApp{
+  display: none;
+}
 .catApp{
 
   display: flex;
@@ -108,6 +156,7 @@ body {
   display: none;
   flex-direction: column;
   width: fit-content;
+  position: fixed;
 }
 .PM {
   font-family: "ds";
