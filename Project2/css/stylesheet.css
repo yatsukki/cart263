@@ -5,8 +5,43 @@
   font-style: normal;
   font-display: swap;
 }
-.trackInfo{
+.trackholder{
+  padding: 0px 20px 0px 20px;
+ 
+}
+.track{
+    align-items: center;
+  
   display: grid;
+  grid-template-columns: 10% 84% 5%;  
+  height: 40px;
+  border-bottom: black;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.track:hover{
+  background-color: #4f2f1742;
+}
+.track:active *{
+  transform: scale(0.95);
+}
+#duration{
+  height: 15px;
+}
+.trackInfo{
+  background-color: #fee3c6;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 10% 84% 5%;  
+  height: 40px;
+  border-bottom: black;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-left: 20px;
+  margin-right: 20px;
   
 }
 .playCover{
@@ -23,6 +58,7 @@
   width: 800px;
 }
 #playlist{
+  overflow: scroll;
   border-style: solid;
   border-color: black;
   border-width: 1px;
