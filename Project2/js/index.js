@@ -223,7 +223,7 @@ escText.style.top = "20px";
 escText.style.right = "20px";
 escText.style.margin = "0";
 escText.style.color = "white";
-escText.style.fontSize = "28px";
+escText.style.fontSize = "20px";
 
 document.body.appendChild(escText);
 
