@@ -5,13 +5,41 @@
   font-style: normal;
   font-display: swap;
 }
+#playhead{
+  margin: 20px;
+  appearance: none;
+  background-color: transparent;
+}
+#playhead::-webkit-slider-thumb{
+  appearance: none;
+  width: 15px;
+  height: 6.5px;
+}
+
+#playhead::-moz-range-thumb{
+  border-radius: 0px;
+  appearance: none;
+  width: 15px;
+  height: 6.5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+#playhead::-webkit-slider-runnable-track{
+  background-color: #0176D0;
+}
+#playhead::-moz-range-track {
+  background-color: #0176D0;
+  height: 4px;
+}
+
 .trackholder{
   padding: 0px 20px 0px 20px;
  
 }
 .track{
-    align-items: center;
-  
+  align-items: center;  
   display: grid;
   grid-template-columns: 10% 84% 5%;  
   height: 40px;
@@ -21,9 +49,11 @@
 }
 .track:hover{
   background-color: #4f2f1742;
+  transition: .3s;
 }
 .track:active *{
   transform: scale(0.95);
+  transition: .1s;
 }
 #duration{
   height: 15px;
@@ -66,7 +96,7 @@
   width: 55%;
 }
 
-#cover{
+#coverContainer{
   border-style: solid;
   border-color: black;
   border-width: 1px;
