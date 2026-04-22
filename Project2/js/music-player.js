@@ -2,35 +2,78 @@ let songImage = document.getElementById("coverArt")
 let playPause = document.getElementById("play")
 let previous = document.getElementById("previous")
 let next = document.getElementById("next")
+let loop = document.getElementById("loop")
+const playhead = document.getElementById("playhead");
+
 
 
 //stuff to keep track of the song playing
 const audio = document.createElement("audio");
 let currentSongIndex = 0;
+
 //previous functions
 previous.addEventListener("click", function(){
     console.log("previous has been clicked")
+    
+
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+
+    playSong(currentSongIndex);
+
+    if (sound.seek() > 3) {
+  sound.seek(0); // restart instead of going previous
+} else {
+  currentIndex = (currentIndex - 1 + songs.length) % songs.length;
+  playSong(currentIndex);
+}
+
 })
 //play pause
 
 let isPlaying = false;
 
-
 playPause.addEventListener("click", function(){
-    if (!sound) return;
+    if (!sound)  return;
 
     if (sound.playing()) {
         sound.pause();
-        playPause.src = "../media/control buttons/09 paused.png"
+        playPause.src = "../media/control buttons/07 play.png"
         isPlaying = false
     }
     else {
         sound.play();
-        playPause.src = "./media/control buttons/07 play.png"
+        playPause.src = "./media/control buttons/09 paused.png"
+        isPlaying = true
     }
 
 })
 
+//next button
+next.addEventListener("click", function(){
+    console.log("jellooo")
+})
+
+//loop stuff
+
+let isLooping = false
+
+loop.addEventListener("click", function(){
+    if (!sound) return;
+
+  isLooping = !isLooping;
+
+  sound.loop(isLooping);
+
+  console.log("Looping:", isLooping);
+ if (isLooping) {
+  loop.src = "./media/control buttons/loopActive.png";
+} else {
+  loop.src = "./media/control buttons/loop.png";
+}
+})
+
+
+// songs info
 const songs = [
     {   cover:"../media/music/covers/song1.jpg",
         name: "When the stardust hits",
@@ -102,6 +145,31 @@ const songs = [
     },
 ]
 
+//playerhead stuff
+function updatePlayhead() {
+  if (!sound) return;
+
+  const currentTime = sound.seek();
+  const duration = sound.duration();
+
+  if (duration) {
+    playhead.value = (currentTime / duration) * 100;
+  }
+
+  requestAnimationFrame(updatePlayhead);
+}
+//playhead updating song depending where its at
+playhead.addEventListener("input", function () {
+  if (!sound) return;
+
+  const duration = sound.duration();
+  const seekTime = (playhead.value / 100) * duration;
+
+  sound.seek(seekTime);
+});
+
+
+
 console.log("i am hugnry")
 
 //creating track names
@@ -121,6 +189,8 @@ window.addEventListener("DOMContentLoaded", () => {
     //adding event listener for playing songs or whatever
     track.addEventListener("click",() =>{
         playSong(index)
+        playPause.src = "../media/control buttons/09 paused.png"
+        isPlaying = true
     })
     trackHolder.appendChild(track);
   });
@@ -143,6 +213,7 @@ function playSong(index) {
     html5: true
     });
     sound.play();
+    updatePlayhead();
     console.log("Playing:", song.name);
 
 
