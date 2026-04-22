@@ -3,6 +3,7 @@ let playPause = document.getElementById("play")
 let previous = document.getElementById("previous")
 let next = document.getElementById("next")
 let loop = document.getElementById("loop")
+
 const playhead = document.getElementById("playhead");
 
 
@@ -10,6 +11,8 @@ const playhead = document.getElementById("playhead");
 //stuff to keep track of the song playing
 const audio = document.createElement("audio");
 let currentSongIndex = 0;
+
+
 
 //previous functions
 previous.addEventListener("click", function(){
@@ -50,8 +53,11 @@ playPause.addEventListener("click", function(){
 
 //next button
 next.addEventListener("click", function(){
-    console.log("jellooo")
-})
+    console.log("Next track...")
+  currentIndex = (currentIndex + 1) % songs.length;
+
+  playSong(currentIndex);
+});
 
 //loop stuff
 
@@ -71,6 +77,10 @@ loop.addEventListener("click", function(){
   loop.src = "./media/control buttons/loop.png";
 }
 })
+
+//stuff for automatically switching to next song
+
+
 
 
 // songs info
@@ -210,8 +220,12 @@ function playSong(index) {
 
     sound = new Howl({
     src: [song.audio],
-    html5: true
+    html5: true,
+    loop: isLooping,
+    onend: autoNext,
+    
     });
+    
     sound.play();
     updatePlayhead();
     console.log("Playing:", song.name);
