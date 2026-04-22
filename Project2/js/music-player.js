@@ -1,5 +1,35 @@
-let sound = null;
-let currentIndex = 0;
+let songImage = document.getElementById("coverArt")
+let playPause = document.getElementById("play")
+let previous = document.getElementById("previous")
+let next = document.getElementById("next")
+
+
+//stuff to keep track of the song playing
+const audio = document.createElement("audio");
+let currentSongIndex = 0;
+//previous functions
+previous.addEventListener("click", function(){
+    console.log("previous has been clicked")
+})
+//play pause
+
+let isPlaying = false;
+
+
+playPause.addEventListener("click", function(){
+    if (!sound) return;
+
+    if (sound.playing()) {
+        sound.pause();
+        playPause.src = "../media/control buttons/09 paused.png"
+        isPlaying = false
+    }
+    else {
+        sound.play();
+        playPause.src = "./media/control buttons/07 play.png"
+    }
+
+})
 
 const songs = [
     {   cover:"../media/music/covers/song1.jpg",
@@ -95,6 +125,9 @@ window.addEventListener("DOMContentLoaded", () => {
     trackHolder.appendChild(track);
   });
 });
+
+let sound = null;
+let currentIndex = 0;
 
 function playSong(index) {
   const song = songs[index];
