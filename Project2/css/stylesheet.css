@@ -5,10 +5,19 @@
   font-style: normal;
   font-display: swap;
 }
+
+.controls{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: center;
+}
+
 #playhead{
   margin: 20px;
   appearance: none;
   background-color: transparent;
+  margin-bottom: 10px;
 }
 #playhead::-webkit-slider-thumb{
   border-radius: 0px;
@@ -67,7 +76,7 @@
   position: sticky;
   top: 0;
   align-items: center;
-  margin-top: 10px;
+  
   display: grid;
   grid-template-columns: 10% 84% 5%;  
   height: 40px;
@@ -98,6 +107,12 @@
   border-width: 1px;
   height: 300px;
   width: 55%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#playlist::-webkit-scrollbar {
+  display: none;
 }
 
 #coverContainer{
