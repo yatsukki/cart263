@@ -1,3 +1,6 @@
+let sound = null;
+let currentIndex = 0;
+
 const songs = [
     {   cover:"../media/music/covers/song1.jpg",
         name: "When the stardust hits",
@@ -76,7 +79,7 @@ console.log("i am hugnry")
 window.addEventListener("DOMContentLoaded", () => {
   const trackHolder = document.querySelector(".trackholder");
 
-  songs.forEach((song) => {
+  songs.forEach((song, index) => {
     const track = document.createElement("div");
     track.classList.add("track");
 
@@ -86,13 +89,29 @@ window.addEventListener("DOMContentLoaded", () => {
       <p>${song.duration}</p>
     `;
     //adding event listener for playing songs or whatever
-    
+    track.addEventListener("click",() =>{
+        playSong(index)
+    })
     trackHolder.appendChild(track);
   });
 });
 
-songs[1].addEventListener("click",testfunction)
+function playSong(index) {
+  const song = songs[index];
+  currentIndex = index;
 
-function testfunction(){
-    console.log("hellooooooo")
+// stop previous song
+  if (sound) {
+    sound.stop();
+    }
+
+    sound = new Howl({
+    src: [song.audio],
+    html5: true
+    });
+    sound.play();
+    console.log("Playing:", song.name);
+
+
 }
+
