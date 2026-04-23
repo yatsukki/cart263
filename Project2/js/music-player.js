@@ -1,18 +1,30 @@
-let songImage = document.getElementById("coverArt")
+let songImage = document.getElementById("coverArt");
 let playPause = document.getElementById("play")
 let previous = document.getElementById("previous")
 let next = document.getElementById("next")
 let loop = document.getElementById("loop")
 
+
 const playhead = document.getElementById("playhead");
 
+
+
+//update cover image
 
 
 //stuff to keep track of the song playing
 const audio = document.createElement("audio");
 let currentSongIndex = 0;
 
-
+//auto next song
+function autoNext() {
+  if (isLooping) {
+    sound.play(); // repeat same song
+    return;
+  }
+currentIndex = (currentIndex + 1) % songs.length;
+  playSong(currentIndex);
+}
 
 //previous functions
 previous.addEventListener("click", function(){
@@ -228,6 +240,8 @@ function playSong(index) {
     
     sound.play();
     updatePlayhead();
+    //update cover
+    songImage.src = song.cover;
     console.log("Playing:", song.name);
 
 

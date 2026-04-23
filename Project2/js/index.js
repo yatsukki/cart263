@@ -240,7 +240,9 @@ document.addEventListener("keydown", function (event) {
 let startButton = document.querySelector("#startButton")
 let catAppIcon = document.querySelector("#catAppGroup")
 let drawAppIcon = document.querySelector("#ArtAppGroup")
+let musicAppIcon = document.querySelector("#musicAppGroup")
 
+musicAppIcon.addEventListener("dblclick", musicOpen)
 startButton.addEventListener("mouseover", startHover)
 startButton.addEventListener("mouseout", startOut)
 catAppIcon.addEventListener("dblclick", catOpen)
@@ -264,8 +266,13 @@ function catOpen(){
 
 function drawOpen(){
     let drawApp = document.getElementById("drawingApp")
-    console.log("bomboclaat")
+    console.log("art app is open")
     drawApp.style.display = "flex"
 
     setupDrawing();
+}
+
+function musicOpen(){
+  let mp3Player = document.getElementById("mp3Player")
+  mp3Player.style.display = "flex"
 }
