@@ -13,13 +13,12 @@ const playhead = document.getElementById("playhead");
 
 //stuff to keep track of the song playing
 const audio = document.createElement("audio");
-let currentSongIndex = 0;
+let currentIndex = 0;
 
 //auto next song
 function autoNext() {
   if (isLooping) {
-    sound.play(); // repeat same song
-    return;
+      return;
   }
 currentIndex = (currentIndex + 1) % songs.length;
   playSong(currentIndex);
@@ -30,9 +29,9 @@ previous.addEventListener("click", function(){
     console.log("previous has been clicked")
     
 
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    currentIndex = (currentIndex - 1 + songs.length) % songs.length;
 
-    playSong(currentSongIndex);
+    playSong(currentIndex);
 
     if (sound.seek() > 3) {
   sound.seek(0); // restart instead of going previous
@@ -218,7 +217,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 let sound = null;
-let currentIndex = 0;
+
 
 function playSong(index) {
   const song = songs[index];
