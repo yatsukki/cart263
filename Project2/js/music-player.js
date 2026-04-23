@@ -95,7 +95,7 @@ loop.addEventListener("click", function(){
 
 // songs info
 const songs = [
-    {   cover:"dia/music/covers/song1.jpg",
+    {   cover:"media/music/covers/song1.jpg",
         name: "When the stardust hits",
         trackNo: "1.",
         duration: "3:31",
