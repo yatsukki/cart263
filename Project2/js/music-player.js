@@ -224,24 +224,7 @@ function playSong(index) {
   const song = songs[index];
   currentIndex = index;
 
-// stop previous song
-  if (sound) {
-    sound.stop();
-    }
 
-    sound = new Howl({
-    src: [song.audio],
-    html5: true,
-    loop: isLooping,
-    onend: autoNext,
-    
-    });
-    
-    sound.play();
-    updatePlayhead();
-    //update cover
-    songImage.src = song.cover;
-    console.log("Playing:", song.name);
 
 
 }
