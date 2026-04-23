@@ -9,7 +9,6 @@ const playhead = document.getElementById("playhead");
 
 
 
-//update cover image
 
 
 //stuff to keep track of the song playing
