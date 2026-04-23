@@ -276,3 +276,26 @@ function musicOpen(){
   let mp3Player = document.getElementById("mp3Player")
   mp3Player.style.display = "flex"
 }
+
+// CLOSE BUTTONS
+
+// cat app close
+const catClose = document.querySelector("#vertFlex .bluebar img");
+
+catClose.addEventListener("click", function () {
+  document.getElementById("vertFlex").style.display = "none";
+});
+
+// drawing app close
+const drawClose = document.querySelector("#drawingApp .bluebarDrag img");
+
+drawClose.addEventListener("click", function () {
+  document.getElementById("drawingApp").style.display = "none";
+});
+
+// music player close
+const musicClose = document.querySelector("#mp3Player .mp3BlueBar img");
+
+musicClose.addEventListener("click", function () {
+  document.getElementById("mp3Player").style.display = "none";
+});
