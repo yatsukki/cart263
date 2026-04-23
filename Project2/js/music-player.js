@@ -51,12 +51,12 @@ playPause.addEventListener("click", function(){
 
     if (sound.playing()) {
         sound.pause();
-        playPause.src = "../media/control buttons/07 play.png"
+        playPause.src = "media/control buttons/07 play.png"
         isPlaying = false
     }
     else {
         sound.play();
-        playPause.src = "./media/control buttons/09 paused.png"
+        playPause.src = "media/control buttons/09 paused.png"
         isPlaying = true
     }
 
@@ -83,9 +83,9 @@ loop.addEventListener("click", function(){
 
   console.log("Looping:", isLooping);
  if (isLooping) {
-  loop.src = "./media/control buttons/loopActive.png";
+  loop.src = "media/control buttons/loopActive.png";
 } else {
-  loop.src = "./media/control buttons/loop.png";
+  loop.src = "media/control buttons/loop.png";
 }
 })
 
@@ -96,73 +96,73 @@ loop.addEventListener("click", function(){
 
 // songs info
 const songs = [
-    {   cover:"../media/music/covers/song1.jpg",
+    {   cover:"dia/music/covers/song1.jpg",
         name: "When the stardust hits",
         trackNo: "1.",
         duration: "3:31",
-        audio: "../media/music/song1.mp3"
+        audio: "dia/music/song1.mp3"
     },
-    {   cover:"../media/music/covers/song2.jpg",
+    {   cover:"dia/music/covers/song2.jpg",
         name: "Boss of me",
         trackNo: "2.",
         duration: "2:58",
-        audio: "../media/music/song2.mp3"
+        audio: "dia/music/song2.mp3"
     },
 
-    {   cover:"../media/music/covers/song3.jpg",
+    {   cover:"edia/music/covers/song3.jpg",
         name: "Luxury",
         trackNo: "3.",
         duration: "3:26",
-        audio: "../media/music/song3.mp3"
+        audio: "media/music/song3.mp3"
     },
 
-    {   cover:"../media/music/covers/song4.jpg",
+    {   cover:"media/music/covers/song4.jpg",
         name: "glitter ✩‧₊˚",
         trackNo: "4.",
         duration: "3:36",
-        audio: "../media/music/song4.mp3"
+        audio: "media/music/song4.mp3"
     },
 
-    {   cover:"../media/music/covers/song5.jpg",
+    {   cover:"media/music/covers/song5.jpg",
         name: "Heaven",
         trackNo: "5.",
         duration: "2:31",
-        audio: "../media/music/song5.mp3"
+        audio: "media/music/song5.mp3"
     },
 
-    {   cover:"../media/music/covers/song6.jpg",
+    {   cover:"media/music/covers/song6.jpg",
         name: "Romance",
         trackNo: "6.",
         duration: "3:31",
-        audio: "../media/music/song6.mp3"
+        audio: "media/music/song6.mp3"
     },
 
-    {   cover:"../media/music/covers/song7.jpg",
+    {   cover:"media/music/covers/song7.jpg",
         name: "Sunny Duet",
         trackNo: "7.",
         duration: "3:34",
-        audio: "../media/music/song7.mp3"
+        audio: "media/music/song7.mp3"
     },
 
-    {   cover:"../media/music/covers/song8.jpg",
+    {   cover:"media/music/covers/song8.jpg",
         name: "Girl like me",
         trackNo: "8.",
         duration: "2:26",
-        audio: "../media/music/song8.mp3"
+        audio: "media/music/song8.mp3"
     },
 
-    {   cover:"../media/music/covers/song9.jpg",
+    {   cover:"media/music/covers/song9.jpg",
         name: "GOODBYENOKUBAY - SAYONARA!!",
         trackNo: "9.",
         duration: "2:46",
-        audio: "../media/music/song9.mp3"
+        audio: "media/music/song9.mp3"
     },
 
-    {   cover:"../media/music/covers/song10.jpg",
+    {   cover:"media/music/covers/song10.jpg",
         name: "hyvät herrat – Rework",
         trackNo: "10.",
         duration: "2:09",
-        audio: "../media/music/song10.mp3"
+        audio: "media/music/song10.mp3"
     },
 ]
 
@@ -210,7 +210,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //adding event listener for playing songs or whatever
     track.addEventListener("click",() =>{
         playSong(index)
-        playPause.src = "../media/control buttons/09 paused.png"
+        playPause.src = "media/control buttons/09 paused.png"
         isPlaying = true
     })
     trackHolder.appendChild(track);
