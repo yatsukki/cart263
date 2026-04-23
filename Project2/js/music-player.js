@@ -26,21 +26,13 @@ currentIndex = (currentIndex + 1) % songs.length;
 
 //previous functions
 previous.addEventListener("click", function(){
-    console.log("previous has been clicked")
-    
-
+  if (sound && sound.seek() > 3) {
+    sound.seek(0);
+  } else {
     currentIndex = (currentIndex - 1 + songs.length) % songs.length;
-
     playSong(currentIndex);
-
-    if (sound && sound.seek() > 3) {
-  sound.seek(0);
-} else {
-  currentIndex = (currentIndex - 1 + songs.length) % songs.length;
-  playSong(currentIndex);
-}
-
-})
+  }
+});
 //play pause
 
 let isPlaying = false;
@@ -209,7 +201,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //adding event listener for playing songs or whatever
     track.addEventListener("click",() =>{
         playSong(index)
-        
+        console.log(song.cover);
     })
     trackHolder.appendChild(track);
   });
