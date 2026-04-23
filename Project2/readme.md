@@ -1,7 +1,7 @@
 ## Project 2
 
 by Kerven-Laurent Casimir and Rayvhaun Dougan-Gordon <br><br>
-Click [here](https://yatsukki.github.io/cart263/Project1) to view project
+Click [here](https://yatsukki.github.io/cart263/Project2) to view project
 ### Description 
 
 
