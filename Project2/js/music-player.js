@@ -33,8 +33,8 @@ previous.addEventListener("click", function(){
 
     playSong(currentIndex);
 
-    if (sound.seek() > 3) {
-  sound.seek(0); // restart instead of going previous
+    if (sound && sound.seek() > 3) {
+  sound.seek(0);
 } else {
   currentIndex = (currentIndex - 1 + songs.length) % songs.length;
   playSong(currentIndex);
@@ -99,16 +99,16 @@ const songs = [
         name: "When the stardust hits",
         trackNo: "1.",
         duration: "3:31",
-        audio: "dia/music/song1.mp3"
+        audio: "media/music/song1.mp3"
     },
-    {   cover:"dia/music/covers/song2.jpg",
+    {   cover:"media/music/covers/song2.jpg",
         name: "Boss of me",
         trackNo: "2.",
         duration: "2:58",
-        audio: "dia/music/song2.mp3"
+        audio: "media/music/song2.mp3"
     },
 
-    {   cover:"edia/music/covers/song3.jpg",
+    {   cover:"media/music/covers/song3.jpg",
         name: "Luxury",
         trackNo: "3.",
         duration: "3:26",
@@ -209,8 +209,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //adding event listener for playing songs or whatever
     track.addEventListener("click",() =>{
         playSong(index)
-        playPause.src = "media/control buttons/09 paused.png"
-        isPlaying = true
+        
     })
     trackHolder.appendChild(track);
   });
@@ -238,6 +237,9 @@ function playSong(index) {
     
     sound.play();
     updatePlayhead();
+    //update ui
+    playPause.src = "media/control buttons/09 paused.png";
+    isPlaying = true;
     //update cover
     songImage.src = song.cover;
     console.log("Playing:", song.name);
