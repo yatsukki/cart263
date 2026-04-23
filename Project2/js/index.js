@@ -236,7 +236,7 @@ document.addEventListener("keydown", function (event) {
 
 
 //app icons interactions
-
+let cameraAppIcon = document.querySelector("#cameraAppGroup");
 let startButton = document.querySelector("#startButton")
 let catAppIcon = document.querySelector("#catAppGroup")
 let drawAppIcon = document.querySelector("#ArtAppGroup")
@@ -247,6 +247,7 @@ startButton.addEventListener("mouseover", startHover)
 startButton.addEventListener("mouseout", startOut)
 catAppIcon.addEventListener("dblclick", catOpen)
 drawAppIcon.addEventListener("dblclick", drawOpen)
+cameraAppIcon.addEventListener("dblclick", cameraOpen);
 
 function startHover(){
     startButton.style.backgroundPosition = "0px 30px"
@@ -277,6 +278,11 @@ function musicOpen(){
   mp3Player.style.display = "flex"
 }
 
+
+function cameraOpen() {
+  let cameraWindow = document.getElementById("cameraWindow");
+  cameraWindow.style.display = "flex";
+}
 // CLOSE BUTTONS
 
 // cat app close
@@ -298,4 +304,49 @@ const musicClose = document.querySelector("#mp3Player .mp3BlueBar img");
 
 musicClose.addEventListener("click", function () {
   document.getElementById("mp3Player").style.display = "none";
+});
+
+//camera stuff
+const cameraClose = document.getElementById("cameraClose");
+const cameraWindow = document.getElementById("cameraWindow");
+const startCameraBtn = document.getElementById("startCamera");
+const snapPhotoBtn = document.getElementById("snapPhoto");
+const cameraVideo = document.getElementById("cameraVideo");
+const cameraCanvas = document.getElementById("cameraCanvas");
+const photoResult = document.getElementById("photoResult");
+
+let cameraStream = null;
+
+cameraClose.addEventListener("click", function () {
+  cameraWindow.style.display = "none";
+
+  if (cameraStream) {
+    cameraStream.getTracks().forEach(track => track.stop());
+    cameraStream = null;
+  }
+});
+
+startCameraBtn.addEventListener("click", async function () {
+  try {
+    cameraStream = await navigator.mediaDevices.getUserMedia({
+      video: true,
+      audio: false
+    });
+
+    cameraVideo.srcObject = cameraStream;
+  } catch (error) {
+    alert("Camera access was denied or not available.");
+    console.log(error);
+  }
+});
+
+snapPhotoBtn.addEventListener("click", function () {
+  const context = cameraCanvas.getContext("2d");
+
+  cameraCanvas.width = cameraVideo.videoWidth;
+  cameraCanvas.height = cameraVideo.videoHeight;
+
+  context.drawImage(cameraVideo, 0, 0, cameraCanvas.width, cameraCanvas.height);
+
+  photoResult.src = cameraCanvas.toDataURL("image/png");
 });

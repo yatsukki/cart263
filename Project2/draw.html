@@ -22,6 +22,9 @@
         createDraggable("#mp3Player", {
           trigger: ".mp3BlueBar"
         })
+        createDraggable("#cameraWindow", {
+        trigger: ".cameraBlueBar"
+});
       });
 
       
@@ -51,6 +54,10 @@
             <img src="media/musicApp.png" id="AppIcon">
             <p>music player</p>
           </div>
+          <div class="artApp" id="cameraAppGroup">
+            <img src="media/camera.png" id="AppIcon">
+          <p>camera</p>
+</div>
       </div>  
 
       <div id="mp3Player"> <!-- mp3 player -->
@@ -96,6 +103,25 @@
          </div>
 
       </div>
+      <!-- camera app -->
+        <div id="cameraWindow" class="cameraWindow">
+          <div class="cameraBlueBar">
+            <p class="dsFont whiteFont">Camera</p>
+            <img src="media/cross_small.png" alt="close" id="cameraClose">
+          </div>
+
+  <div class="cameraContent">
+    <video id="cameraVideo" autoplay playsinline></video>
+    <canvas id="cameraCanvas" style="display:none;"></canvas>
+
+    <div class="cameraButtons">
+      <button id="startCamera">Start Camera</button>
+      <button id="snapPhoto">Take Picture</button>
+    </div>
+
+    <img id="photoResult" alt="snapshot">
+  </div>
+</div>
 
       <div class="vertFlex" id="vertFlex"> <!-- cat gif engine -->
         <div class="bluebar">
