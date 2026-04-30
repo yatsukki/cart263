@@ -1,5 +1,5 @@
 ### Project 1
-#### Word nerd by Lucie Soussana and Jake Hayduk
+#### Word nerd by Lucie Soussana and Jake Hayduk [https://jakehayduk.github.io/cart263/project-2/]
 
 This project features a word game where the player is asked to complete words containing the group of 3 letters indicated on the screen. The player may increase the difficulty with the slider at the top left. It seems like the higher the difficulty, the more uncommon the combination of letters on the screen is. I don't know if it's randomized because I tried it on maximum difficulty, and it gave me "QN" as the bigram. I thought I was going crazy for not finding any words that have q and n next to each other, but turns out they were all words that no normal human has heard before. The game also features various categories you can choose from, you can either choose between birds, dinosaurs, hockey players, movies, and shows, as the word pool. I think that the concept of the longer the words you use, the more coins you get is quite fun. I'm looking forward to those coins to somehow have a sort of use in the game in the future. If there was one thing I took away from the code was a clever UI trick I never got to use since I'm mostly used to designing websites, and it was how they made sure that the chat would always scroll down to the most recent message.
 
